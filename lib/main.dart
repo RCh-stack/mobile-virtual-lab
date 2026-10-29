@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/interactive_lab/presentation/screens/interactive_vector_screen.dart';
+import 'features/interactive_lab/presentation/screens/interactive_ray_tracing_screen.dart';
 
 void main() {
   runApp(const MobileLabApp());
@@ -14,7 +14,7 @@ class MobileLabApp extends StatelessWidget {
       title: 'Virtual Mobile Lab',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
-      home: const InteractiveVectorScreen(),
+      home: const InteractiveRayTracingScreen(),
     );
   }
 }

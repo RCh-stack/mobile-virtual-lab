@@ -40,6 +40,16 @@ class Vector3 {
     return this - normal * (2.0 * dot(normal));
   }
 
+  Vector3? refract(Vector3 normal, double eta) {
+    final cosI = -dot(normal);
+    final sin2T = eta * eta * (1.0 - cosI * cosI);
+
+    if (sin2T > 1.0) return null;
+
+    final cosT = math.sqrt(1.0 - sin2T);
+    return this * eta + normal * (eta * cosI - cosT);
+  }
+
   @override
   bool operator ==(Object other) =>
     identical(this, other) ||
